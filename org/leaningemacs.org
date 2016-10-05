@@ -1,0 +1,100 @@
+* 学习使用EMACS
+** 安装Emacs和spacemacs
+   rm ~/.emacs
+   git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d/spacemacs
+   vi ~/.emacs.d/init.el
+   (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
+   (load-file (concat spacemacs-start-directory "init.el"))
+** 对spacemacs作一些修改
+   ~/.spacemacs
+   添加一些layers:
+        org 
+        auto-completion
+        helm
+        emacs-lisp
+   修改主题
+   　　　monokai
+** 安装自己的layer
+*** 使用spacemacs命令创建自己的layer,并在.spacemacs文件中声明加载
+   refer to : http://spacemacs.org/doc/LAYERS.html
+   安装自己的layer
+   configuration-layer/creat-layer
+   ~/.emacs.d/spacemacs/private
+   zoujieorg
+
+   将zoujieorg安装在~/下，添加软连接到spacemacs
+   ## mv ~/.emacs.d/spacemacs/private/zoujieorg ~/.
+   ## ln -s ~/zoujieorg ~/.emacs.d/spacemacs/private/.
+
+   ~/.spacemacs中
+   添加layer:zoujieorg
+
+   ~/zoujieorg/下会生成２个文件
+   　　README.md
+      package.el
+*** layer相关基础知识    
+   ~/.emacs.d/spacemacs/private/zoujieorg下有几个文件
+   layers.el添加其它layer
+   (configuration-layer/declare-layer 'B)
+   packages.el
+   (defconst zoujieorg-packages
+   '(company
+   (comanpy :location elpa)
+   )
+   )
+   funcs.el
+   (when (configuration-layer/package-usedp 'zoujieorg)
+   (defun spacemacs/zoujieorg-enable () ...)
+   (defun spacemacs/zoujieorg-disable () ...))
+
+   config.el
+   keybindings.el
+*** 添加layer配置文件
+    新建~/zoujieorg/config.el文件
+    　　　(global-linum-mode t)
+    添加packages ~/zoujieorg/packages.el
+        (defun zoujieorg/init-org-page()
+  (use-package org-page
+    :config
+    (setq op/repository-directory "~/zoujieorg/org")
+    (setq op/site-domain "http://me.zoujie.org")
+    (setq op/personal-disqus-shortname "zoujie")
+    (setq op/site-main-title "边走边看")
+    (setq op/site-sub-title "==========>   折腾不止!")
+    (setq op/personal-github-link "https://github.com/zoujieorg")
+    ))
+
+** 定制layer的一些基础知识
+   The Emacs loading process
+   load-file,(provide require),(push "/some/path" load-path)
+   (autoload 'some-function "some-file")
+   ;;;###autoload
+   (with-eval-after-load 'helm
+   ;; Code
+   )
+   (use-package helm
+   :defer t
+   :init
+   :config
+   :commands (helm-find-files helm-M-x
+   :mode "\\.rb\\'")
+      
+** 相关博客文档
+   陈斌一件成为emacs高手
+   https://github.com/redguardtoo/
+
+   | Name  | Phone | Age |            |
+   | Peter |  1234 |  17 | 有这个爱好 |
+   |-------+-------+-----+------------|
+   |       |       |     |            |
+
+   | 姓名 |        手机 | 年龄 |
+   |------+-------------+------|
+   | 这是 | 13482083435 |   33 |
+   | 年谁 |             |      |
+   |      |             |      |
+   |      |             |      |
+   |      |             |      |
+   |      |             |      |
+   |      |             |      |
+   |      |             |      |
