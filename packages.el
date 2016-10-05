@@ -35,6 +35,8 @@
     ;;hungry-delete
     counsel
     ;;iedit
+    swiper
+    web-mode
     )
   "The list of Lisp packages required by the zoujieorg layer.
 
@@ -92,4 +94,11 @@ Each entry is either:
   (use-package counsel
     :config))
 
+(defun zoujieorg/init-swiper ()
+  (use-package swiper
+    :config))
+
+(defun zoujieorg/init-web-mode ()
+  (use-package web-mode
+    :config))
 ;;; packages.el ends here

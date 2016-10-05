@@ -10,3 +10,4 @@
 (setq org-src-fontify-natively t)
 
 ;;(global-hungry-delete-mode)
+(abbrev-mode t)

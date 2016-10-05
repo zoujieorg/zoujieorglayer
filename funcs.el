@@ -29,10 +29,39 @@
         regexp-history)
   (call-interactively 'occur))
 
-(defun zoujieorgm ()
+(defun zoujieorg/hello ()
   (interactive)
   "this is a test"
   (message "Hello world @zoujieorg"))
 
+(defun zoujieorg/open-my-init-file()
+  (interactive)
+  (find-file "~/zoujieorg/funcs.el"))
+
+;;abbrev-mode貌似未开启
+(define-abbrev-table 'global-abbrev-table '(
+                                            ;;命名
+                                            ("9zo" "zoujieorg")
+                                            ("18p" "zoujieorg/packages")
+                                            ))
+
+;;隐藏Dos换行符
+(defun hidden-dos-eol()
+  "Do not show ^M in files containing mixed Unix and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
+
+;;删除Dos换行符
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed Unix and DOS line endings."
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+
+(setq auto-mode-alist
+      (append
+       '(("\\.html\\'" . web-mode))
+       auto-mode-alist))
 
 
