@@ -64,4 +64,15 @@
        '(("\\.html\\'" . web-mode))
        auto-mode-alist))
 
+(ido-mode 1)
+;; make ido display choices vertically
+(setq ido-separator "\n")
+;; display any item that contains the chars you typed
+(setq ido-enable-flex-matching t)
+(setq max-mini-window-height 0.5)
+
+
+
+
+
 
