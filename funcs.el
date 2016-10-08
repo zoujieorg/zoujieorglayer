@@ -61,7 +61,8 @@
 
 (setq auto-mode-alist
       (append
-       '(("\\.html\\'" . web-mode))
+       '(("\\.html\\'" . web-mode)
+         )
        auto-mode-alist))
 
 (ido-mode 1)
@@ -71,6 +72,10 @@
 (setq ido-enable-flex-matching t)
 (setq max-mini-window-height 0.5)
 
+;; book mark
+;; (setq bookmark-save-flag 1) ; everytime bookmark is changed, automatically save it
+(setq bookmark-save-flag t) ; save bookmark when emacs quits 
+(setq bookmark-save-flag nil) ; never auto save.
 
 
 
