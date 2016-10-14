@@ -1,5 +1,7 @@
 * 安装rust
-
+  tar xvf xxx.tar.gz
+  $sudo ./install.sh
+  $sudo /usr/local/lib/rustlib/uninstall.sh
 * 配置emacs
 ** 前期准备
 *** 下载源码

@@ -8,7 +8,7 @@
 ** 对spacemacs作一些修改
    ~/.spacemacs
    添加一些layers:
-        org 
+        org
         auto-completion
         helm
         emacs-lisp
@@ -32,7 +32,7 @@
    ~/zoujieorg/下会生成２个文件
    　　README.md
       package.el
-*** layer相关基础知识    
+*** layer相关基础知识
    ~/.emacs.d/spacemacs/private/zoujieorg下有几个文件
    layers.el添加其它layer
    (configuration-layer/declare-layer 'B)
@@ -78,7 +78,7 @@
    :config
    :commands (helm-find-files helm-M-x
    :mode "\\.rb\\'")
-      
+
 ** 相关博客文档
    陈斌一件成为emacs高手
    https://github.com/redguardtoo/
@@ -98,3 +98,13 @@
    |      |             |      |
    |      |             |      |
    |      |             |      |
+** git使用
+   本地更新到最新
+   git fetch --all
+   git reset --hard origin/master
+
+ad
+adfsdf
+wr424
+4434
+adfsd3
