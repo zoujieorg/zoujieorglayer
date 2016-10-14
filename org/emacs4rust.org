@@ -1,0 +1,36 @@
+* 安装rust
+
+* 配置emacs
+** 前期准备
+*** 下载源码
+   git clone https://github.com/rust-lang/rust.git ~/.rusten/rustc
+   或https://static.rust-lang.org/dist/rustc-nightly-src.tar.gz
+   tar xvf rustc-nightly-src.tar.gz -C ~/.rusten/.
+   ;;使用rust-lang.org下载比较快
+***   安装racer
+   ;;或使用cargo install racer 速度超慢
+   git clone https://github.com/phildawes/racer.git ~/.rusten/racer
+   cd racer && cargo build --release
+   vi ~/.bashrc   或者 /etc/profile
+   export RUST_SRC_HOME=/home/www/.rusten/rustc-nightly
+   export RUST_SRC_PATH=$RUST_SRC_HOME/src
+   测试
+   ./target/release/racer complete std::io::B
+   /home/www/.rust/racer/target/release/racer complete std::io::B
+   ;;需要把racer加到~/.cargo/bin路径下
+   ln -s ~/.rusten/racer/target/release/racer ~/.cargo/bin/.
+   export PATH=$PATH:/home/www/.cargo/bin
+*** 安装rustfmt
+    cargo install rustfmt
+  Installing /home/www/.cargo/bin/rustfmt
+  Installing /home/www/.cargo/bin/cargo-fmt
+  warning: be sure to add `/home/www/.cargo/bin` to your PATH to be able to run the installed binaries
+*** 关于路径 ~/.profile
+    export PATH=$PATH:/home/www/.cargo/bin
+    export RUST_SRC_HOME=/home/www/.rusten/rustc-nightly
+    export RUST_SRC_PATH=$RUST_SRC_HOME/src
+** 快捷键使用
+   build : M-m c c
+   run: M-RET c x
+   test: M-RET t
+    
