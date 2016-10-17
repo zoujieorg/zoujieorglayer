@@ -5,6 +5,24 @@
    vi ~/.emacs.d/init.el
    (setq spacemacs-start-directory "~/.emacs.d/spacemacs/")
    (load-file (concat spacemacs-start-directory "init.el"))
+
+*** 修改源
+    根据你的需求，设置 package-archives ，比如用 GNU ELPA 和 MELPA：
+#+BEGIN_SRC lisp
+    (setq package-archives '(("gnu"   . "http://elpa.zilongshanren.com/gnu/")
+                         ("melpa" . "http://elpa.zilongshanren.com/melpa/")))
+#+END_SRC
+
+    spacemacs中修改为
+    添加下面的代码到 .spacemacs 的 dotspacemacs/user-init()
+#+BEGIN_EXAMPLE lisp
+    (setq configuration-layer--elpa-archives
+    '(("melpa-cn" . "http://elpa.zilongshanren.com/melpa/")
+    ("org-cn"   . "http://elpa.zilongshanren.com/org/")
+    ("gnu-cn"   . "http://elpa.zilongshanren.com/gnu/")))
+#+END_EXAMPLE
+
+
 ** 对spacemacs作一些修改
    ~/.spacemacs
    添加一些layers:
