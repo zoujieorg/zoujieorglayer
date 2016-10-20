@@ -37,6 +37,8 @@
     ;;iedit
     swiper
     web-mode
+    groovy-mode
+    gradle-mode
     )
   "The list of Lisp packages required by the zoujieorg layer.
 
@@ -100,5 +102,13 @@ Each entry is either:
 
 (defun zoujieorg/init-web-mode ()
   (use-package web-mode
+    :config))
+
+(defun zoujieorg/init-groovy-mode ()
+  (use-package groovy-mode
+    :config))
+
+(defun zoujieorg/init-gradle-mode ()
+  (use-package gradle-mode
     :config))
 ;;; packages.el ends here

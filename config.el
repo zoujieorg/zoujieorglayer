@@ -11,3 +11,6 @@
 
 ;;(global-hungry-delete-mode)
 (abbrev-mode t)
+
+;;(require 'gradle-mode)
+;;(gradle-mode 1)
